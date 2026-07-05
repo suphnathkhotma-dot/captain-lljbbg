@@ -1,0 +1,284 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    font-family:
+    "Prompt",
+    "Segoe UI",
+    sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #01020b 0%,
+        #06112a 40%,
+        #081c40 75%,
+        #000000 100%
+    );
+
+}
+
+
+/* ===========================
+   CANVAS
+=========================== */
+
+#sakura{
+
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:1;
+
+}
+
+
+/* ===========================
+   TEXT
+=========================== */
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    z-index:2;
+
+}
+
+.line{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    animation:
+    fadeUp 2s forwards;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px #ffb8e8,
+
+    0 0 20px #ff8fd2,
+
+    0 0 35px #ff69b4,
+
+    0 0 60px #ff4fa2;
+
+}
+
+.line1{
+
+    font-size:32px;
+
+    animation-delay:1s;
+
+}
+
+.line2{
+
+    margin:18px 0;
+
+    font-size:46px;
+
+    color:#ffd8ef;
+
+    animation-delay:4s;
+
+}
+
+.line3{
+
+    font-size:26px;
+
+    animation-delay:7s;
+
+}
+
+
+/* ===========================
+   TAP
+=========================== */
+
+.tap{
+
+    position:absolute;
+
+    bottom:35px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    opacity:.75;
+
+    z-index:3;
+
+    animation:
+    blink 1.8s infinite;
+
+}
+
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+filter:blur(10px);
+
+transform:
+translateY(45px);
+
+}
+
+100%{
+
+opacity:1;
+
+filter:blur(0);
+
+transform:
+translateY(0);
+
+}
+
+}
+
+@keyframes blink{
+
+0%{
+
+opacity:.3;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.3;
+
+}
+
+}
+
+.line2{
+
+animation-name:
+fadeUp,
+heartBeat;
+
+animation-duration:
+2s,
+2.5s;
+
+animation-delay:
+4s,
+9s;
+
+animation-fill-mode:
+forwards,
+forwards;
+
+animation-iteration-count:
+1,
+infinite;
+
+}
+
+@keyframes heartBeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+.line1{
+
+font-size:28px;
+
+}
+
+.line2{
+
+font-size:36px;
+
+}
+
+.line3{
+
+font-size:22px;
+
+}
+
+.tap{
+
+font-size:16px;
+
+}
+
+}
